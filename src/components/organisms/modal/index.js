@@ -1,8 +1,10 @@
-import { StyledModal, StyledOverlay, StyledModalClose, StyledModalTitle, StyledModalContent, StyledModalContentInner } from './styled'
+import { StyledModal, StyledOverlay, StyledModalHeader, StyledModalContent, StyledModalContentInner } from './styled'
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import Button from 'components/atoms/button'
+import CloseIcon from 'icons/CloseIcon'
 
-function Modal({ onClick, onClose, width = '500px', title, children }) {
+const Modal = ({ onClick, onClose, width = '500px', title, children }) => {
   const [modalVisible, setModalVisible] = useState(true)
 
   useEffect(() => {
@@ -32,17 +34,17 @@ function Modal({ onClick, onClose, width = '500px', title, children }) {
         }}
       ></StyledOverlay>
       <StyledModal modalWidth={width}>
-        <StyledModalClose
-          onClick={() => {
+        <StyledModalHeader>
+          {title}
+          <Button onClick={() => {
             setModalVisible(false)
             if (onClose) {
               onClose()
             }
-          }}
-        >
-          &#x2715;
-        </StyledModalClose>
-        <StyledModalTitle>{title}</StyledModalTitle>
+          }}>
+            <CloseIcon />
+          </Button>
+        </StyledModalHeader>
         <StyledModalContent>
           <StyledModalContentInner>{children}</StyledModalContentInner>
         </StyledModalContent>

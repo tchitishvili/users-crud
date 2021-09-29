@@ -1,9 +1,9 @@
 import { StyledContainer } from './styled'
-import { UsersHeader } from '../UsersHeader';
-import { NewUserForm } from '../NewUserForm';
-import { UsersList } from '../UsersList';
+import UsersHeader from 'components/molecules/usersHeader';
+import NewUserForm from 'components/molecules/newUserForm';
+import UsersList from 'components/organisms/usersList';
 import React, { useEffect, useState } from 'react'
-import { Modal } from '../Modal'
+import Modal from 'components/organisms/modal'
 
 const usersData = [
   {

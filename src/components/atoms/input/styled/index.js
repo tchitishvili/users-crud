@@ -8,11 +8,3 @@ export const StyledInput = styled.input`
   margin: 10px 0px;
   outline: none;
 `
-
-export const StyledTextArea = styled.textarea`
-  width: 100%;
-  min-height: 100px;
-  padding: 10px;
-  margin-bottom: 15px;
-  outline: none;
-`

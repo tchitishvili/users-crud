@@ -1,7 +1,7 @@
 import { StyledUsersList } from './styled'
-import { UserItem } from '../UserItem';
+import UserItem from 'components/molecules/userItem';
 
-function UsersList({ users, deleteUser, editUserState }) {
+const UsersList = ({ users, deleteUser, editUserState }) => {
   return (
     <StyledUsersList>
       {users.map(user => {
@@ -18,4 +18,4 @@ function UsersList({ users, deleteUser, editUserState }) {
   )
 }
 
-export default UsersList;
+export default UsersList

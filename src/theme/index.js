@@ -1,5 +1,4 @@
 export const theme = {
-    color: '#000',
     whtieColor: '#fff',
     bodyBackground: '#fff',
     userCardBackground: '#f5f5f5',

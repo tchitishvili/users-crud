@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StyledButton } from 'components/atoms/button/styled'
 
 export const StyledOverlay = styled.div`
   position: fixed;
@@ -26,15 +27,8 @@ export const StyledModal = styled.div`
   display: flex;
   flex-direction: column;
 `
-export const StyledModalClose = styled.div`
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  color: ${props => props.theme.whtieColor};
-`
 
-export const StyledModalTitle = styled.div`
+export const StyledModalHeader = styled.div`
   font-size: 20px;
   color: ${props => props.theme.modalTitleColor};
   text-align: center;
@@ -42,6 +36,19 @@ export const StyledModalTitle = styled.div`
   padding-bottom: 15px;
   border-bottom: 1px solid ${props => props.theme.modalHeaderBorder};
   width: 100%;
+
+  ${StyledButton} {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: ${props => props.theme.whtieColor};
+    background: transparent;
+    border: 0;
+
+    svg path {
+      fill: ${props => props.theme.whtieColor};
+    }
+  }
 `
 
 export const StyledModalContent = styled.div`

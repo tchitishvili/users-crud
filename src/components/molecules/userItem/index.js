@@ -1,10 +1,13 @@
 import { StyledUserItem, StyledUserItemContent, StyledUserName, StyledUserBio, StyledUserActions } from './styled'
+import CloseIcon from 'icons/CloseIcon'
+import Button from 'components/atoms/button'
+import Img from 'components/atoms/image'
 
-function UserItem({ user, deleteUser, editUserState }) {
+const UserItem = ({ user, deleteUser, editUserState }) => {
   return (
     <StyledUserItem>
       <StyledUserItemContent>
-        <img alt='' src={'https://aui.atlassian.com/aui/latest/docs/images/avatar-person.svg'} />
+        <Img alt='user' src={'https://aui.atlassian.com/aui/latest/docs/images/avatar-person.svg'} />
         <StyledUserName>
           {`${user.firstName} ${user.lastName} ${user.age ? `(${user.age})` : ''}`}
         </StyledUserName>
@@ -12,12 +15,12 @@ function UserItem({ user, deleteUser, editUserState }) {
           {user.bio}
         </StyledUserBio>
         <StyledUserActions>
-          <button onClick={() => editUserState(user.id)}>Edit</button>
-          <button onClick={() => deleteUser(user.id)}>X</button>
+          <Button onClick={() => editUserState(user.id)}>Edit</Button>
+          <Button onClick={() => deleteUser(user.id)}><CloseIcon /></Button>
         </StyledUserActions>
       </StyledUserItemContent>
     </StyledUserItem>
   )
 }
 
-export default UserItem;
+export default UserItem

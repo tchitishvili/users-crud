@@ -1,10 +1,11 @@
 import { StyledUserHeader } from './styled'
+import Button from 'components/atoms/button'
 
-function UsersHeader({ onClick, count }) {
+const UsersHeader = ({ onClick, count }) => {
   return (
     <StyledUserHeader>
       Total Users Count: {count}
-      <button onClick={() => onClick()}>Add New User</button>
+      <Button onClick={() => onClick()}>Add New User</Button>
     </StyledUserHeader>
   )
 }
